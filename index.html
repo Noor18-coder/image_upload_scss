@@ -1,0 +1,30 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+<p>Add the class <b>--has image</b> to rt-image-upload-controls in order to switch between the empty and attached image
+    states.</p>
+
+<p>The component should be able to switch between display modes through modifying or adding classes on
+    <b>"rt-image-upload"</b> only</p>
+<form>
+<div class="rt-image-upload">
+    <div class="rt-image-upload__controls">
+        <div class="rt-image-container">
+            <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Rubber_Duck_%288374802487%29.jpg/220px-Rubber_Duck_%288374802487%29.jpg">
+            <input  id="file" class="rt-image-input" type="file" />
+        </div>
+        <div class="rt-image-upload__actions">
+            <label for="file" class="rt-image-input__label">filename.xyz</label>
+            <span class="buttons">
+                <button  class="attach"><label for="1">REPLACE</label></button>
+                <button class="delete">REMOVE</button>
+            </span>
+        </div>
+    </div>
+</div>
+</form>
+</body>
+</html>

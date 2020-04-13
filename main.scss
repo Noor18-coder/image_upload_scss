@@ -1,0 +1,71 @@
+$blue-background: rgba(0, 0, 255, 0.15);
+$blue-border: blue;
+
+@import "reset";
+@import "img";
+@import "input";
+
+@mixin active {
+  &:active {
+    @content;
+  }
+}
+
+@mixin switch-states($first-state: true) {
+  @if $first-state {
+    position: relative;
+    border: 2px dotted rgba(0, 0, 0, 0.12);
+    border-radius: 1px;
+    margin-top: 20px;
+
+    &:hover {
+      border-color: $blue-border;
+      background-color: $blue-background;
+
+      .rt-image-input__label {
+        @include label(none);
+      }
+    }
+  }
+}
+
+.rt-image-upload__controls {
+  @include switch-states($first-state: true);
+  @include active {
+    border: none;
+    padding: 0;
+    background-color: white;
+    margin-bottom: 32px;
+    cursor: none;
+
+    .rt-image-input {
+      z-index: -1;
+    }
+
+    img {
+      display: block;
+    }
+
+    button {
+      @extend button;
+      &.delete {
+        @include del_btn(block);
+      }
+    }
+
+    .rt-image-input__label {
+      @include label(none);
+      position: inline;
+      bottom: 0;
+      text-align: left;
+      padding: 12px;
+      color: white;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .rt-image-input__label {
+      @include label(block);
+    }
+  }
+}
